@@ -43,12 +43,12 @@
             this.GreetLineEditor.AutoSize = true;
             this.GreetLineEditor.Font = new System.Drawing.Font("Play", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GreetLineEditor.ForeColor = System.Drawing.Color.Gainsboro;
-            this.GreetLineEditor.Location = new System.Drawing.Point(77, 327);
+            this.GreetLineEditor.Location = new System.Drawing.Point(132, 327);
             this.GreetLineEditor.Name = "GreetLineEditor";
-            this.GreetLineEditor.Size = new System.Drawing.Size(563, 42);
+            this.GreetLineEditor.Size = new System.Drawing.Size(454, 63);
             this.GreetLineEditor.TabIndex = 5;
-            this.GreetLineEditor.Text = "Ho ho ho, ye user!\r\nYe must log in before ye can edit with the best of \'em in thi" +
-    "s here editor!";
+            this.GreetLineEditor.Text = "Aye, me bucko!\r\nYe need a proper login to hoist the mainsail on this editor.\r\nDon" +
+    "\'t be a landlubber, log in like a proper pirate!";
             this.GreetLineEditor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BrandLabelEditor
