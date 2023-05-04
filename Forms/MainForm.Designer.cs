@@ -36,12 +36,14 @@
             this.HomeButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.TopPanel = new System.Windows.Forms.Panel();
             this.IconBox = new System.Windows.Forms.PictureBox();
             this.BrandLabel = new System.Windows.Forms.Label();
             this.GreetLine = new System.Windows.Forms.Label();
-            this.TopPanel = new System.Windows.Forms.Panel();
+            this.LoginStatusText = new System.Windows.Forms.Label();
             this.SideMenuPanel.SuspendLayout();
             this.HomeSubMenu.SuspendLayout();
+            this.LogoPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +122,7 @@
             // 
             // LogoPanel
             // 
+            this.LogoPanel.Controls.Add(this.LoginStatusText);
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
@@ -138,6 +141,16 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(730, 530);
             this.MainPanel.TabIndex = 1;
+            // 
+            // TopPanel
+            // 
+            this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.Location = new System.Drawing.Point(0, 0);
+            this.TopPanel.Name = "TopPanel";
+            this.TopPanel.Size = new System.Drawing.Size(730, 32);
+            this.TopPanel.TabIndex = 3;
+            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
             // 
             // IconBox
             // 
@@ -174,15 +187,16 @@
             this.GreetLine.TabIndex = 2;
             this.GreetLine.Text = "AHOY, Matey!";
             // 
-            // TopPanel
+            // LoginStatusText
             // 
-            this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(730, 32);
-            this.TopPanel.TabIndex = 3;
-            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
+            this.LoginStatusText.AutoSize = true;
+            this.LoginStatusText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LoginStatusText.Location = new System.Drawing.Point(3, 35);
+            this.LoginStatusText.Name = "LoginStatusText";
+            this.LoginStatusText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LoginStatusText.Size = new System.Drawing.Size(143, 13);
+            this.LoginStatusText.TabIndex = 0;
+            this.LoginStatusText.Text = "Login status: Not logged in";
             // 
             // MainForm
             // 
@@ -201,6 +215,8 @@
             this.Text = "D3FAU4TBOT Hub";
             this.SideMenuPanel.ResumeLayout(false);
             this.HomeSubMenu.ResumeLayout(false);
+            this.LogoPanel.ResumeLayout(false);
+            this.LogoPanel.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
@@ -221,6 +237,7 @@
         private System.Windows.Forms.Label GreetLine;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Panel TopPanel;
+        private System.Windows.Forms.Label LoginStatusText;
     }
 }
 

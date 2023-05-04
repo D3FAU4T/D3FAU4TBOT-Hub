@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace D3FAU4TBOT_Hub
@@ -69,6 +68,7 @@ namespace D3FAU4TBOT_Hub
             LoginForm.LoggedIn += (s, ev) =>
             {
                 OpenChildForm(new IdleForm());
+                LoginStatusText.Text = $"Login status: Logged in as\n{LoginForm.DiscordID}";
             };
         }
 
