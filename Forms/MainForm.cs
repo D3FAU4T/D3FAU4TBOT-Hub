@@ -1,4 +1,5 @@
-﻿using System;
+﻿using D3FAU4TBOT_Hub.Forms;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -17,16 +18,20 @@ namespace D3FAU4TBOT_Hub
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+        public bool LoggedIn = false;
 
         private void CustomizeDesign()
         {
             HomeSubMenu.Visible = false;
+            WordsOnStreamSubMenu.Visible = false;
         }
 
         private void HideSubMenus()
         {
             if (HomeSubMenu.Visible) 
                 HomeSubMenu.Visible = false;
+            if (WordsOnStreamSubMenu.Visible)
+                WordsOnStreamSubMenu.Visible = false;
         }
 
         private void ShowSubMenus(Panel SubMenu)
@@ -67,6 +72,7 @@ namespace D3FAU4TBOT_Hub
             OpenChildForm(LoginForm);
             LoginForm.LoggedIn += (s, ev) =>
             {
+                LoggedIn = true;
                 OpenChildForm(new IdleForm());
                 LoginStatusText.Text = $"Login status: Logged in as\n{LoginForm.DiscordID}";
             };
@@ -84,6 +90,16 @@ namespace D3FAU4TBOT_Hub
                 ReleaseCapture();
                 SendMessage(Handle, 0xA1, 0x2, 0);
             }
+        }
+
+        private void WordsOnStreamButton_Click(object sender, EventArgs e)
+        {
+            ShowSubMenus(WordsOnStreamSubMenu);
+        }
+
+        private void EditorButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new EditorForm(LoggedIn));
         }
     }
 }
