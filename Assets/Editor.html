@@ -1,0 +1,773 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WOS - Words On Stream</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" sizes="192x192" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+    <div id="root">
+        <div id="contentTop" style="transform: scale(0.1);">
+            <div class="content">
+                <div class="room fade-enter-done">
+                    <header>
+                        <span class="wos"></span>
+                        <div class="word">
+                            <div class="contentFeedback" id="topbar">
+                                <div class="levelCompleted">
+                                    <span id="congratulations">CONGRATULATIONS!</span>
+                                    <p id="levelCompleted">LEVEL COMPLETED!</p>
+                                </div>
+                            </div>
+                            <div class="contentAnagram">
+                                <div>
+                                    <div class="lastHits" id="syncingTxt"></div>
+                                    <div class="containerLetters" id="syncSetter">
+                                        <p id="formWords">FORM WORDS WITH THE LETTERS BELOW</p>
+                                        <div class="letters" id="letterShuffles"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actionsHeader alignRight">
+                            <div class="metas">
+                                <div class="lottieMetas">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 170" width="430" height="170"
+                                         style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"
+                                         preserveAspectRatio="xMidYMid meet">
+                                        <defs>
+                                            <clipPath id="__lottie_element_315">
+                                                <rect width="430" height="170" x="0" y="0"></rect>
+                                            </clipPath>
+                                        </defs>
+                                        <g clip-path="url(#__lottie_element_315)">
+                                            <g style="display: block;" transform="matrix(1,0,0,1,-40.52799987792969,-38.06500244140625)"
+                                               opacity="1">
+                                                <g opacity="1" transform="matrix(1,0,0,1,231.13299560546875,123)">
+                                                    <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                                                          stroke="rgb(52,23,98)" stroke-opacity="1" stroke-width="20"
+                                                          d=" M213.0679931640625,73 C213.0679931640625,73 -149.99200439453125,73 -149.99200439453125,73 C-157.6750030517578,73 -164.20799255371094,66.85900115966797 -165.3769989013672,58.54199981689453 C-165.3769989013672,58.54199981689453 -179.6820068359375,-53.356998443603516 -179.6820068359375,-53.356998443603516 C-181.13299560546875,-63.68600082397461 -173.83799743652344,-73 -164.29800415039062,-73 C-164.29800415039062,-73 213.0679931640625,-73 213.0679931640625,-73 C221.66400146484375,-73 228.63299560546875,-65.36599731445312 228.63299560546875,-55.95000076293945 C228.63299560546875,-55.95000076293945 228.63299560546875,55.94900131225586 228.63299560546875,55.94900131225586 C228.63299560546875,65.36599731445312 221.66400146484375,73 213.0679931640625,73z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                            <g style="display: block;" transform="matrix(1,0,0,1,-40.52799987792969,-38.06500244140625)"
+                                               opacity="1">
+                                                <g opacity="1" transform="matrix(1,0,0,1,231.13299560546875,123)">
+                                                    <path id="timebarLine" stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                          stroke-miterlimit="10" stroke="rgb(248,195,82)" stroke-opacity="1" stroke-width="10"
+                                                          d=" M-177.88900756835938,-64.26699829101562 C-175.2449951171875,-69.43399810791016 -170.2010040283203,-73 -164.29800415039062,-73 C-164.29800415039062,-73 213.0679931640625,-73 213.0679931640625,-73 C221.66400146484375,-73 228.63299560546875,-65.36599731445312 228.63299560546875,-55.95000076293945 C228.63299560546875,-55.95000076293945 228.63299560546875,55.94900131225586 228.63299560546875,55.94900131225586 C228.63299560546875,65.36599731445312 221.66400146484375,73 213.0679931640625,73 C213.0679931640625,73 213.0679931640625,73 213.0679931640625,73 C213.0679931640625,73 -149.99200439453125,73 -149.99200439453125,73 C-157.6750030517578,73 -164.20799255371094,66.85900115966797 -165.3769989013672,58.54199981689453 C-165.3769989013672,58.54199981689453 -179.6820068359375,-53.356998443603516 -179.6820068359375,-53.356998443603516 C-179.78900146484375,-54.1150016784668 -179.84800720214844,-54.86800003051758 -179.86300659179688,-55.61199951171875">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="infosMeta animGoal" id="wordpointtotal">
+                                    <span class="meta">
+                                        <p id="GOAL">GOAL</p>
+                                        <strong id="goalNumber">176/176</strong>
+                                    </span>
+                                    <span class="level">
+                                        <p id="level">LEVEL</p>
+                                        <strong id="topLevelNumber">256</strong>
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="color: #782cca">aa</div>
+                            <div class="exitSound">
+                                <div class="close" title="Language and UI" id="languageSettingBtn"></div>
+                                <button class="config" title="Settings" id="configSetting"></button>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="middle">
+                        <div class="time">
+                            <i class="icon"></i>
+                            <div id="timebar">
+                                <span style="width: 82%; transition-duration: 117000ms;" class=""></span>
+                                <div class="mark" style="left: 12%;"></div>
+                                <div class="mark" style="left: 28%;"></div>
+                                <div class="mark" style="left: 45%;"></div>
+                                <div class="mark" style="left: 62%;"></div>
+                                <div class="mark" style="left: 78%;"></div>
+                            </div>
+                        </div>
+                        <div class="answer" id="answerslots">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="qrcode">
+                <span>
+                    <button class="copyToClipboard" id="copyToClipboard">Submit for a Custom Level</button>
+                </span>
+                <i></i>
+                <div>
+                    <p id="QR1">SCAN THE QR CODE TO JOIN THE GAME</p>
+                    <p id="QR2">ENJOY EXTRA FEATURES!</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup popup-enter-active awards" id="setting" hidden>
+            <div class="contentPopup" style="transform: scale(0.297732);" id="configPopup">
+                <button class="close" title="Close" id="settingClose"></button>
+                <h3 id="settingLang">Settings</h3>
+                <div class="word-mode">
+                    <h4 id="easyMode">Easy Mode</h4>
+                    <p id="easyModeText">Don't know how to use JSON? Turn on easy mode and use the UI to customize</p>
+                    <span class="onoff">
+                        <input id="wordMode" title="Easy Mode Switch" type="checkbox">
+                        <label for="wordMode"></label>
+                    </span>
+                </div>
+                <div class="addCommands" id="bottomConfig">
+                    <h4 id="JSONconfig">JSON Config</h4>
+                    <p id="JSONtxt">Paste the JSON configuration in order to update the board. Example format below.</p>
+                    <textarea class="" id="jsoninput"></textarea>
+                    <label class="error"></label>
+                </div>
+                <div class="sounds" id="thirdRow"></div>
+                <div class="sounds" id="fourthRow"></div>
+            </div>
+        </div>
+        <!-- New Language Button -->
+        <div class="popup popup-enter-active awards" id="languageSetting" hidden>
+            <div class="contentPopup" style="transform: scale(0.297732);" id="languagePopup">
+                <button class="close" title="Close" id="languageSettingClose"></button>
+                <h3 id="langUI">Language and UI</h3>
+                <div class="sounds" id="firstRow">
+                    <span>
+                        <h4 id="LangLanguage">Language</h4>
+                        <span class="vol">
+                            <button class="down" title="Previous" id="languageDown"></button>
+                            <p id="languageNumber">English</p>
+                            <button class="up" title="Next" id="languageUp"></button>
+                        </span>
+                    </span>
+                </div>
+                <div class="word-mode">
+                    <h4 id="syncTxt">Synchronization</h4>
+                    <p id="syncSubTxt">Triggers the "Syncing last hits" instead of letters</p>
+                    <br>
+                    <span class="onoff">
+                        <input id="sync" title="Enable sync" type="checkbox">
+                        <label for="sync"></label>
+                    </span>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div class="popup wdone popup-enter-done" hidden>
+                <div class="brilho"></div>
+                <div class="contentPopup" style="transform: scale(0.234405);">
+                    <div class="welldone">
+                        <div class="header">
+                            <h3>FANTASTIC!</h3>
+                            <h5>SKIP <strong>3 LEVELS!</strong></h5>
+                        </div>
+                        <div class="middle">
+                            <div class="level">
+                                <span>
+                                    <h6>LEVEL</h6>
+                                    <strong>28</strong>
+                                </span>
+                            </div>
+                            <div class="center">
+                                <div class="lottie">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="800"
+                                         height="290" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"
+                                         preserveAspectRatio="xMidYMid meet">
+                                        <defs>
+                                            <clipPath id="__lottie_element_389">
+                                                <rect width="800" height="290" x="0" y="0"></rect>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_391">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_395">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_423">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_469">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_473">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_501">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_547">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_551">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                            <clipPath id="__lottie_element_579">
+                                                <path d="M0,0 L275,0 L275,275 L0,275z"></path>
+                                            </clipPath>
+                                        </defs>
+                                        <g clip-path="url(#__lottie_element_389)">
+                                            <g style="display: block;"
+                                               transform="matrix(1.0199999809265137,0,0,1.0199999809265137,539.0465087890625,65.89812469482422)"
+                                               opacity="1">
+                                                <g opacity="1" transform="matrix(1,0,0,1,101.90699768066406,96.61299896240234)">
+                                                    <path fill="rgb(42,24,70)" fill-opacity="1"
+                                                          d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.601999282836914,-49.319000244140625 25.601999282836914,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.86800003051758,-36.12699890136719 C43.86800003051758,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.737998962402344,13.041000366210938 59.737998962402344,13.041000366210938 C53.150001525878906,17.839000701904297 50.15599822998047,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0260009765625,75.10399627685547 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.229000091552734,64.61000061035156 11.229000091552734,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33599853515625,57.1150016784668 C-60.33599853515625,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.743000030517578 C-59.737998962402344,12.743000030517578 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                    </path>
+                                                </g>
+                                                <g opacity="1" transform="matrix(1,0,0,1,101.6729965209961,97.29399871826172)">
+                                                    <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                                                          stroke="rgb(177,134,250)" stroke-opacity="1" stroke-width="2"
+                                                          d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.60099983215332,-49.319000244140625 25.60099983215332,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.867000579833984,-36.12699890136719 C43.867000579833984,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.73699951171875,13.041000366210938 59.73699951171875,13.041000366210938 C53.150001525878906,17.839000701904297 50.154998779296875,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0250015258789,75.10299682617188 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.227999687194824,64.61000061035156 11.227999687194824,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33700180053711,57.1150016784668 C-60.33700180053711,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.741999626159668 C-59.737998962402344,12.741999626159668 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                            <g clip-path="url(#__lottie_element_547)" style="display: none;">
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                              stroke-miterlimit="10"></path>
+                                                    </g>
+                                                </g>
+                                                <g clip-path="url(#__lottie_element_579)" style="display: none;">
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path></path>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g clip-path="url(#__lottie_element_551)" style="display: none;">
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path></path>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                            <g style="display: block;"
+                                               transform="matrix(1.0199999809265137,0,0,1.0199999809265137,296.1735534667969,49.89812469482422)"
+                                               opacity="1">
+                                                <g opacity="1" transform="matrix(1,0,0,1,101.90699768066406,96.61299896240234)">
+                                                    <path fill="rgb(42,24,70)" fill-opacity="1"
+                                                          d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.601999282836914,-49.319000244140625 25.601999282836914,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.86800003051758,-36.12699890136719 C43.86800003051758,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.737998962402344,13.041000366210938 59.737998962402344,13.041000366210938 C53.150001525878906,17.839000701904297 50.15599822998047,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0260009765625,75.10399627685547 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.229000091552734,64.61000061035156 11.229000091552734,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33599853515625,57.1150016784668 C-60.33599853515625,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.743000030517578 C-59.737998962402344,12.743000030517578 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                    </path>
+                                                </g>
+                                                <g opacity="1" transform="matrix(1,0,0,1,101.6729965209961,97.29399871826172)">
+                                                    <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                                                          stroke="rgb(177,134,250)" stroke-opacity="1" stroke-width="2"
+                                                          d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.60099983215332,-49.319000244140625 25.60099983215332,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.867000579833984,-36.12699890136719 C43.867000579833984,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.73699951171875,13.041000366210938 59.73699951171875,13.041000366210938 C53.150001525878906,17.839000701904297 50.154998779296875,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0250015258789,75.10299682617188 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.227999687194824,64.61000061035156 11.227999687194824,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33700180053711,57.1150016784668 C-60.33700180053711,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.741999626159668 C-59.737998962402344,12.741999626159668 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                            <g clip-path="url(#__lottie_element_469)" style="display: none;">
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                              stroke-miterlimit="10"></path>
+                                                    </g>
+                                                </g>
+                                                <g clip-path="url(#__lottie_element_501)" style="display: none;">
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path></path>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g clip-path="url(#__lottie_element_473)" style="display: none;">
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path></path>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: none;">
+                                                        <g>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                            <g style="display: block;"
+                                               transform="matrix(1.0199999809265137,0,0,1.0199999809265137,55.04655456542969,65.89812469482422)"
+                                               opacity="1">
+                                                <g opacity="1" transform="matrix(1,0,0,1,101.90699768066406,96.61299896240234)">
+                                                    <path fill="rgb(42,24,70)" fill-opacity="1"
+                                                          d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.601999282836914,-49.319000244140625 25.601999282836914,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.86800003051758,-36.12699890136719 C43.86800003051758,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.737998962402344,13.041000366210938 59.737998962402344,13.041000366210938 C53.150001525878906,17.839000701904297 50.15599822998047,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0260009765625,75.10399627685547 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.229000091552734,64.61000061035156 11.229000091552734,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33599853515625,57.1150016784668 C-60.33599853515625,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.743000030517578 C-59.737998962402344,12.743000030517578 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                    </path>
+                                                </g>
+                                                <g opacity="1" transform="matrix(1,0,0,1,101.6729965209961,97.29399871826172)">
+                                                    <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                                                          stroke="rgb(177,134,250)" stroke-opacity="1" stroke-width="2"
+                                                          d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.60099983215332,-49.319000244140625 25.60099983215332,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.867000579833984,-36.12699890136719 C43.867000579833984,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.73699951171875,13.041000366210938 59.73699951171875,13.041000366210938 C53.150001525878906,17.839000701904297 50.154998779296875,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0250015258789,75.10299682617188 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.227999687194824,64.61000061035156 11.227999687194824,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33700180053711,57.1150016784668 C-60.33700180053711,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.741999626159668 C-59.737998962402344,12.741999626159668 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                            <g clip-path="url(#__lottie_element_391)" style="display: block;"
+                                               transform="matrix(1,0,0,1,20,15)" opacity="1">
+                                                <g style="display: block;"
+                                                   transform="matrix(1.0199999809265137,0,0,1.0199999809265137,34.04655456542969,49.89812469482422)"
+                                                   opacity="1">
+                                                    <g opacity="1" transform="matrix(1,0,0,1,101.90699768066406,96.61299896240234)">
+                                                        <path fill="rgb(42,24,70)" fill-opacity="1"
+                                                              d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.601999282836914,-49.319000244140625 25.601999282836914,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.86800003051758,-36.12699890136719 C43.86800003051758,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.737998962402344,13.041000366210938 59.737998962402344,13.041000366210938 C53.150001525878906,17.839000701904297 50.15599822998047,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0260009765625,75.10399627685547 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.229000091552734,64.61000061035156 11.229000091552734,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33599853515625,57.1150016784668 C-60.33599853515625,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.743000030517578 C-59.737998962402344,12.743000030517578 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                        </path>
+                                                    </g>
+                                                    <g opacity="1" transform="matrix(1,0,0,1,101.6729965209961,97.29399871826172)">
+                                                        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                                                              stroke="rgb(177,134,250)" stroke-opacity="1" stroke-width="2"
+                                                              d=" M18.115999221801758,-72.1050033569336 C18.115999221801758,-72.1050033569336 25.60099983215332,-49.319000244140625 25.60099983215332,-49.319000244140625 C28.297000885009766,-41.52399826049805 35.483001708984375,-36.12699890136719 43.867000579833984,-36.12699890136719 C43.867000579833984,-36.12699890136719 67.8219985961914,-36.12699890136719 67.8219985961914,-36.12699890136719 C86.38700103759766,-36.12699890136719 94.1729965209961,-12.442000389099121 79.20099639892578,-1.3489999771118164 C79.20099639892578,-1.3489999771118164 59.73699951171875,13.041000366210938 59.73699951171875,13.041000366210938 C53.150001525878906,17.839000701904297 50.154998779296875,26.534000396728516 52.849998474121094,34.62799835205078 C52.849998474121094,34.62799835205078 60.33700180053711,57.415000915527344 60.33700180053711,57.415000915527344 C66.0250015258789,75.10299682617188 45.9640007019043,89.79399871826172 30.691999435424805,79.0009994506836 C30.691999435424805,79.0009994506836 11.227999687194824,64.61000061035156 11.227999687194824,64.61000061035156 C4.640999794006348,59.8129997253418 -4.640999794006348,59.8129997253418 -11.229000091552734,64.61000061035156 C-11.229000091552734,64.61000061035156 -30.691999435424805,78.7020034790039 -30.691999435424805,78.7020034790039 C-45.66400146484375,89.79399871826172 -66.0260009765625,74.8030014038086 -60.33700180053711,57.1150016784668 C-60.33700180053711,57.1150016784668 -52.849998474121094,34.32899856567383 -52.849998474121094,34.32899856567383 C-50.154998779296875,26.534000396728516 -53.150001525878906,17.839000701904297 -59.737998962402344,12.741999626159668 C-59.737998962402344,12.741999626159668 -79.20099639892578,-1.3489999771118164 -79.20099639892578,-1.3489999771118164 C-94.1729965209961,-12.442000389099121 -86.38700103759766,-36.12699890136719 -67.8219985961914,-36.12699890136719 C-67.8219985961914,-36.12699890136719 -43.867000579833984,-36.12699890136719 -43.867000579833984,-36.12699890136719 C-35.483001708984375,-36.12699890136719 -28.297000885009766,-41.52399826049805 -25.601999282836914,-49.319000244140625 C-25.601999282836914,-49.319000244140625 -18.115999221801758,-72.1050033569336 -18.115999221801758,-72.1050033569336 C-12.72599983215332,-89.79399871826172 12.427000045776367,-89.79399871826172 18.115999221801758,-72.1050033569336z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: none;">
+                                                    <g>
+                                                        <path></path>
+                                                    </g>
+                                                    <g>
+                                                        <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: block;" transform="matrix(1,0,0,1,70.84500122070312,81.51599884033203)"
+                                                   opacity="1">
+                                                    <g opacity="1" transform="matrix(0,0,0,0,113.9260025024414,12.75)">
+                                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                              d=" M0,-18.5 C2.815000057220459,-9.355999946594238 8.670999526977539,-2.878000020980835 18,0 C8.670999526977539,2.878000020980835 2.815000057220459,9.355999946594238 0,18.5 C-2.812999963760376,9.355999946594238 -8.670999526977539,2.878000020980835 -18,0 C-8.670999526977539,-2.878000020980835 -2.812999963760376,-9.354999542236328 0,-18.5z">
+                                                        </path>
+                                                    </g>
+                                                    <g opacity="1"
+                                                       transform="matrix(0.00010861643386306241,0,0,0.00010861643386306241,14.795000076293945,74.05400085449219)">
+                                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                              d=" M0.0010000000474974513,-14.949000358581543 C2.2760000228881836,-7.559999942779541 7.006999969482422,-2.325000047683716 14.545999526977539,0 C7.006999969482422,2.3259999752044678 2.2760000228881836,7.560999870300293 0.0010000000474974513,14.949000358581543 C-2.2720000743865967,7.560999870300293 -7.006999969482422,2.3259999752044678 -14.545999526977539,0 C-7.006999969482422,-2.325000047683716 -2.2720000743865967,-7.559000015258789 0.0010000000474974513,-14.949000358581543z">
+                                                        </path>
+                                                    </g>
+                                                    <g opacity="1" transform="matrix(0,0,0,0,125.29499816894531,104.05400085449219)">
+                                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                              d=" M0.0010000000474974513,-12.225000381469727 C1.8609999418258667,-6.182000160217285 5.730000019073486,-1.9010000228881836 11.895000457763672,0.0010000000474974513 C5.730000019073486,1.902999997138977 1.8609999418258667,6.183000087738037 0.0010000000474974513,12.225000381469727 C-1.8569999933242798,6.182000160217285 -5.729000091552734,1.902999997138977 -11.895000457763672,0.0010000000474974513 C-5.729000091552734,-1.9010000228881836 -1.8569999933242798,-6.182000160217285 0.0010000000474974513,-12.225000381469727z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <g style="display: block;" transform="matrix(0,0,0,0,137.7530059814453,144.13800048828125)"
+                                                   opacity="1">
+                                                    <g opacity="1" transform="matrix(1,0,0,1,101.6729965209961,97.29399871826172)">
+                                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10"
+                                                              stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="3" d="M0 0"></path>
+                                                    </g>
+                                                </g>
+                                                <g clip-path="url(#__lottie_element_423)" style="display: block;"
+                                                   transform="matrix(1,0,0,1,0,0)" opacity="1">
+                                                    <g style="display: block;" transform="matrix(1,0,0,1,137.5,135)" opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(0,1,-1,0,140.63099670410156,138.59300231933594)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(0,-1,1,0,135.40699768066406,136.63099670410156)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(1,0,0,1,139,380)" opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,0.7071067690849304,-0.7071067690849304,0.7071067690849304,-37.75764083862305,317.2760009765625)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path fill="rgb(255,0,0)" fill-opacity="1" d="M0 0">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,-0.7071067690849304,0.7071067690849304,0.7071067690849304,313.1829833984375,309.3886413574219)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,0.7071067690849304,-0.7071067690849304,0.7071067690849304,140.2423553466797,134.77598571777344)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,-0.7071067690849304,0.7071067690849304,0.7071067690849304,133.6829833984375,133.88864135742188)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g clip-path="url(#__lottie_element_395)" style="display: block;"
+                                                   transform="matrix(0.9205048680305481,0.3907311260700226,-0.3907311260700226,0.9205048680305481,64.65611267089844,-42.794952392578125)"
+                                                   opacity="1">
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,-0.7071067690849304,0.7071067690849304,0.7071067690849304,133.6829833984375,133.88864135742188)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,0.7071067690849304,-0.7071067690849304,0.7071067690849304,140.2423553466797,134.77598571777344)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,-0.7071067690849304,0.7071067690849304,0.7071067690849304,313.1829833984375,309.3886413574219)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;"
+                                                       transform="matrix(0.7071067690849304,0.7071067690849304,-0.7071067690849304,0.7071067690849304,-37.75764083862305,317.2760009765625)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path fill="rgb(255,0,0)" fill-opacity="1" d="M0 0">
+                                                            </path>
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(1,0,0,1,139,380)" opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(0,-1,1,0,135.40699768066406,136.63099670410156)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(0,1,-1,0,140.63099670410156,138.59300231933594)"
+                                                       opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                    <g style="display: block;" transform="matrix(1,0,0,1,137.5,135)" opacity="1">
+                                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                                  stroke-miterlimit="4" stroke="rgb(236,197,80)" stroke-opacity="1" stroke-width="6"
+                                                                  d="M0 0"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="words" id="wordcount">
+                                <span>
+                                    <h6>WORDS</h6>
+                                    <p><strong>20</strong> /20</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
