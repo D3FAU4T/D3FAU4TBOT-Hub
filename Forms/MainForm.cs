@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace D3FAU4TBOT_Hub
@@ -43,7 +44,7 @@ namespace D3FAU4TBOT_Hub
             }
         }
 
-        private void OpenChildForm(Form ChildForm)
+        public void OpenChildForm(Form ChildForm)
         {
             ActiveForm?.Close();
             ActiveForm = ChildForm;
@@ -63,7 +64,12 @@ namespace D3FAU4TBOT_Hub
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new LoginForm());
+            LoginForm LoginForm = new LoginForm();
+            OpenChildForm(LoginForm);
+            LoginForm.LoggedIn += (s, ev) =>
+            {
+                OpenChildForm(new IdleForm());
+            };
         }
 
         private void ExitButton_Click(Object sender, EventArgs e)
