@@ -46,6 +46,7 @@
             this.BrandLabel = new System.Windows.Forms.Label();
             this.GreetLine = new System.Windows.Forms.Label();
             this.PlayButton = new System.Windows.Forms.Button();
+            this.VersionNumber = new System.Windows.Forms.Label();
             this.SideMenuPanel.SuspendLayout();
             this.WordsOnStreamSubMenu.SuspendLayout();
             this.HomeSubMenu.SuspendLayout();
@@ -190,6 +191,7 @@
             // 
             // LogoPanel
             // 
+            this.LogoPanel.Controls.Add(this.VersionNumber);
             this.LogoPanel.Controls.Add(this.LoginStatusText);
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
@@ -201,7 +203,7 @@
             // 
             this.LoginStatusText.AutoSize = true;
             this.LoginStatusText.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LoginStatusText.Location = new System.Drawing.Point(3, 35);
+            this.LoginStatusText.Location = new System.Drawing.Point(3, 44);
             this.LoginStatusText.Name = "LoginStatusText";
             this.LoginStatusText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.LoginStatusText.Size = new System.Drawing.Size(143, 13);
@@ -282,6 +284,17 @@
             this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PlayButton.UseVisualStyleBackColor = false;
             // 
+            // VersionNumber
+            // 
+            this.VersionNumber.AutoSize = true;
+            this.VersionNumber.ForeColor = System.Drawing.Color.Gainsboro;
+            this.VersionNumber.Location = new System.Drawing.Point(3, 31);
+            this.VersionNumber.Name = "VersionNumber";
+            this.VersionNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.VersionNumber.Size = new System.Drawing.Size(82, 13);
+            this.VersionNumber.TabIndex = 1;
+            this.VersionNumber.Text = "Version: 0.1.0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +341,7 @@
         private System.Windows.Forms.Button EditorButton;
         private System.Windows.Forms.Button WordsOnStreamButton;
         private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.Label VersionNumber;
     }
 }
 

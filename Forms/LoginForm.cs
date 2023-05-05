@@ -23,7 +23,7 @@ namespace D3FAU4TBOT_Hub
                 Config ConfigData = new Config
                 {
                     DiscordID = this.DiscordID.ToString(),
-                    StayLoggedIn = this.StayLoggedIn
+                    StayLoggedIn = this.StayLoggedIn,
                 };
 
                 string ConfigJson = JsonConvert.SerializeObject(ConfigData);

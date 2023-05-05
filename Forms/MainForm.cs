@@ -20,6 +20,7 @@ namespace D3FAU4TBOT_Hub
         public static extern bool ReleaseCapture();
         public bool LoggedIn = false;
         private long DiscordID;
+        public string Version;
 
         public MainForm()
         {
@@ -27,6 +28,7 @@ namespace D3FAU4TBOT_Hub
             SetupOrFetchConfig();
             InitializeBrowser();
             CustomizeDesign();
+            VersionNumber.Text = $"Version: {Version}";
             if (LoggedIn)
             {
                 LoginStatusText.Text = $"Login status: Logged in as\n{DiscordID}";
@@ -46,6 +48,7 @@ namespace D3FAU4TBOT_Hub
             {
                 string SerializedJson = File.ReadAllText(ConfigFilePath);
                 Config ConfigData = JsonConvert.DeserializeObject<Config>(SerializedJson);
+                Version = ConfigData.Version;
                 if (ConfigData.StayLoggedIn)
                 {
                     if (long.TryParse(ConfigData.DiscordID, out long discordId))
@@ -61,8 +64,9 @@ namespace D3FAU4TBOT_Hub
                 Config ConfigData = new Config
                 {
                     DiscordID = "",
-                    StayLoggedIn = false
+                    StayLoggedIn = false,
                 };
+                Version = ConfigData.Version;
                 string ConfigJson = JsonConvert.SerializeObject(ConfigData);
                 File.WriteAllText(ConfigFilePath, ConfigJson);
             }

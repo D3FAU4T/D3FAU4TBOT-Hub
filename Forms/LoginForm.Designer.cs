@@ -65,11 +65,10 @@
             // LoginTextBox
             // 
             this.LoginTextBox.Font = new System.Drawing.Font("Play", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginTextBox.Location = new System.Drawing.Point(301, 201);
+            this.LoginTextBox.Location = new System.Drawing.Point(328, 201);
             this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.Size = new System.Drawing.Size(189, 20);
+            this.LoginTextBox.Size = new System.Drawing.Size(162, 20);
             this.LoginTextBox.TabIndex = 2;
-            this.LoginTextBox.Text = "Type your Discord ID here";
             this.LoginTextBox.TextChanged += new System.EventHandler(this.LoginTextBox_TextChanged);
             // 
             // DiscordIDLabel
@@ -79,9 +78,9 @@
             this.DiscordIDLabel.ForeColor = System.Drawing.Color.Gainsboro;
             this.DiscordIDLabel.Location = new System.Drawing.Point(217, 202);
             this.DiscordIDLabel.Name = "DiscordIDLabel";
-            this.DiscordIDLabel.Size = new System.Drawing.Size(74, 17);
+            this.DiscordIDLabel.Size = new System.Drawing.Size(105, 17);
             this.DiscordIDLabel.TabIndex = 3;
-            this.DiscordIDLabel.Text = "Discord ID:";
+            this.DiscordIDLabel.Text = "Discord User ID:";
             // 
             // StayLoggedInCheckBox
             // 
