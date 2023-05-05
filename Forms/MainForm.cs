@@ -113,7 +113,12 @@ namespace D3FAU4TBOT_Hub
 
         public void OpenChildForm(Form ChildForm)
         {
-            ActiveForm?.Close();
+            if (ActiveForm != null)
+            {
+                if (ChildForm.Name == ActiveForm.Name) return;
+                ActiveForm.Close();
+            };
+            CurrentMenuText.Text = ChildForm.Name;
             ActiveForm = ChildForm;
             ChildForm.TopLevel = false;
             ChildForm.FormBorderStyle = FormBorderStyle.None;
@@ -143,7 +148,7 @@ namespace D3FAU4TBOT_Hub
             };
         }
 
-        private void ExitButton_Click(Object sender, EventArgs e)
+        private void ExitApp()
         {
             Browser.Dispose();
             Cef.Shutdown();
@@ -167,6 +172,22 @@ namespace D3FAU4TBOT_Hub
         private void EditorButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new EditorForm(LoggedIn, Browser));
+        }
+
+        private void SettingButton_Click(object sender, EventArgs e)
+        {
+            HideSubMenus();
+            OpenChildForm(new SettingForm());
+        }
+
+        private void CrossButton_Click(object sender, EventArgs e)
+        {
+            ExitApp();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ExitApp();
         }
     }
 }
