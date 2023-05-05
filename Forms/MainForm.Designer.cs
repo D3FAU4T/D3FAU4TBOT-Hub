@@ -30,27 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.WordsOnStreamSubMenu = new System.Windows.Forms.Panel();
+            this.MyLevelsButton = new System.Windows.Forms.Button();
+            this.EditorButton = new System.Windows.Forms.Button();
+            this.WordsOnStreamButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.HomeSubMenu = new System.Windows.Forms.Panel();
             this.LoginButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
+            this.LoginStatusText = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.IconBox = new System.Windows.Forms.PictureBox();
             this.BrandLabel = new System.Windows.Forms.Label();
             this.GreetLine = new System.Windows.Forms.Label();
-            this.LoginStatusText = new System.Windows.Forms.Label();
-            this.WordsOnStreamButton = new System.Windows.Forms.Button();
-            this.WordsOnStreamSubMenu = new System.Windows.Forms.Panel();
-            this.EditorButton = new System.Windows.Forms.Button();
             this.PlayButton = new System.Windows.Forms.Button();
             this.SideMenuPanel.SuspendLayout();
+            this.WordsOnStreamSubMenu.SuspendLayout();
             this.HomeSubMenu.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).BeginInit();
-            this.WordsOnStreamSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideMenuPanel
@@ -68,6 +69,66 @@
             this.SideMenuPanel.Name = "SideMenuPanel";
             this.SideMenuPanel.Size = new System.Drawing.Size(220, 530);
             this.SideMenuPanel.TabIndex = 0;
+            // 
+            // WordsOnStreamSubMenu
+            // 
+            this.WordsOnStreamSubMenu.Controls.Add(this.PlayButton);
+            this.WordsOnStreamSubMenu.Controls.Add(this.MyLevelsButton);
+            this.WordsOnStreamSubMenu.Controls.Add(this.EditorButton);
+            this.WordsOnStreamSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WordsOnStreamSubMenu.Location = new System.Drawing.Point(0, 245);
+            this.WordsOnStreamSubMenu.Name = "WordsOnStreamSubMenu";
+            this.WordsOnStreamSubMenu.Size = new System.Drawing.Size(220, 143);
+            this.WordsOnStreamSubMenu.TabIndex = 5;
+            // 
+            // MyLevelsButton
+            // 
+            this.MyLevelsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.MyLevelsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MyLevelsButton.FlatAppearance.BorderSize = 0;
+            this.MyLevelsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyLevelsButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.MyLevelsButton.Location = new System.Drawing.Point(0, 40);
+            this.MyLevelsButton.Name = "MyLevelsButton";
+            this.MyLevelsButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.MyLevelsButton.Size = new System.Drawing.Size(220, 40);
+            this.MyLevelsButton.TabIndex = 1;
+            this.MyLevelsButton.Text = "My Levels";
+            this.MyLevelsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MyLevelsButton.UseVisualStyleBackColor = false;
+            // 
+            // EditorButton
+            // 
+            this.EditorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.EditorButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EditorButton.FlatAppearance.BorderSize = 0;
+            this.EditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditorButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.EditorButton.Location = new System.Drawing.Point(0, 0);
+            this.EditorButton.Name = "EditorButton";
+            this.EditorButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.EditorButton.Size = new System.Drawing.Size(220, 40);
+            this.EditorButton.TabIndex = 0;
+            this.EditorButton.Text = "Editor";
+            this.EditorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EditorButton.UseVisualStyleBackColor = false;
+            this.EditorButton.Click += new System.EventHandler(this.EditorButton_Click);
+            // 
+            // WordsOnStreamButton
+            // 
+            this.WordsOnStreamButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WordsOnStreamButton.FlatAppearance.BorderSize = 0;
+            this.WordsOnStreamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WordsOnStreamButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.WordsOnStreamButton.Location = new System.Drawing.Point(0, 200);
+            this.WordsOnStreamButton.Name = "WordsOnStreamButton";
+            this.WordsOnStreamButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.WordsOnStreamButton.Size = new System.Drawing.Size(220, 45);
+            this.WordsOnStreamButton.TabIndex = 4;
+            this.WordsOnStreamButton.Text = "Words On Stream";
+            this.WordsOnStreamButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.WordsOnStreamButton.UseVisualStyleBackColor = true;
+            this.WordsOnStreamButton.Click += new System.EventHandler(this.WordsOnStreamButton_Click);
             // 
             // ExitButton
             // 
@@ -136,6 +197,17 @@
             this.LogoPanel.Size = new System.Drawing.Size(220, 100);
             this.LogoPanel.TabIndex = 0;
             // 
+            // LoginStatusText
+            // 
+            this.LoginStatusText.AutoSize = true;
+            this.LoginStatusText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LoginStatusText.Location = new System.Drawing.Point(3, 35);
+            this.LoginStatusText.Name = "LoginStatusText";
+            this.LoginStatusText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LoginStatusText.Size = new System.Drawing.Size(143, 13);
+            this.LoginStatusText.TabIndex = 0;
+            this.LoginStatusText.Text = "Login status: Not logged in";
+            // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
@@ -194,60 +266,6 @@
             this.GreetLine.TabIndex = 2;
             this.GreetLine.Text = "AHOY, Matey!";
             // 
-            // LoginStatusText
-            // 
-            this.LoginStatusText.AutoSize = true;
-            this.LoginStatusText.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LoginStatusText.Location = new System.Drawing.Point(3, 35);
-            this.LoginStatusText.Name = "LoginStatusText";
-            this.LoginStatusText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.LoginStatusText.Size = new System.Drawing.Size(143, 13);
-            this.LoginStatusText.TabIndex = 0;
-            this.LoginStatusText.Text = "Login status: Not logged in";
-            // 
-            // WordsOnStreamButton
-            // 
-            this.WordsOnStreamButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.WordsOnStreamButton.FlatAppearance.BorderSize = 0;
-            this.WordsOnStreamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WordsOnStreamButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.WordsOnStreamButton.Location = new System.Drawing.Point(0, 200);
-            this.WordsOnStreamButton.Name = "WordsOnStreamButton";
-            this.WordsOnStreamButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.WordsOnStreamButton.Size = new System.Drawing.Size(220, 45);
-            this.WordsOnStreamButton.TabIndex = 4;
-            this.WordsOnStreamButton.Text = "Words On Stream";
-            this.WordsOnStreamButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.WordsOnStreamButton.UseVisualStyleBackColor = true;
-            this.WordsOnStreamButton.Click += new System.EventHandler(this.WordsOnStreamButton_Click);
-            // 
-            // WordsOnStreamSubMenu
-            // 
-            this.WordsOnStreamSubMenu.Controls.Add(this.PlayButton);
-            this.WordsOnStreamSubMenu.Controls.Add(this.EditorButton);
-            this.WordsOnStreamSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.WordsOnStreamSubMenu.Location = new System.Drawing.Point(0, 245);
-            this.WordsOnStreamSubMenu.Name = "WordsOnStreamSubMenu";
-            this.WordsOnStreamSubMenu.Size = new System.Drawing.Size(220, 94);
-            this.WordsOnStreamSubMenu.TabIndex = 5;
-            // 
-            // EditorButton
-            // 
-            this.EditorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.EditorButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EditorButton.FlatAppearance.BorderSize = 0;
-            this.EditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditorButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.EditorButton.Location = new System.Drawing.Point(0, 0);
-            this.EditorButton.Name = "EditorButton";
-            this.EditorButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.EditorButton.Size = new System.Drawing.Size(220, 40);
-            this.EditorButton.TabIndex = 0;
-            this.EditorButton.Text = "Editor";
-            this.EditorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EditorButton.UseVisualStyleBackColor = false;
-            this.EditorButton.Click += new System.EventHandler(this.EditorButton_Click);
-            // 
             // PlayButton
             // 
             this.PlayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -255,11 +273,11 @@
             this.PlayButton.FlatAppearance.BorderSize = 0;
             this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlayButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.PlayButton.Location = new System.Drawing.Point(0, 40);
+            this.PlayButton.Location = new System.Drawing.Point(0, 80);
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.PlayButton.Size = new System.Drawing.Size(220, 40);
-            this.PlayButton.TabIndex = 1;
+            this.PlayButton.TabIndex = 2;
             this.PlayButton.Text = "Play";
             this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PlayButton.UseVisualStyleBackColor = false;
@@ -280,13 +298,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "D3FAU4TBOT Hub";
             this.SideMenuPanel.ResumeLayout(false);
+            this.WordsOnStreamSubMenu.ResumeLayout(false);
             this.HomeSubMenu.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
-            this.WordsOnStreamSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -306,9 +324,10 @@
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Label LoginStatusText;
         private System.Windows.Forms.Panel WordsOnStreamSubMenu;
-        private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.Button MyLevelsButton;
         private System.Windows.Forms.Button EditorButton;
         private System.Windows.Forms.Button WordsOnStreamButton;
+        private System.Windows.Forms.Button PlayButton;
     }
 }
 

@@ -4,19 +4,14 @@ using D3FAU4TBOT_Hub.Forms;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
 using System.Windows.Forms;
 
 namespace D3FAU4TBOT_Hub
 {
     public partial class MainForm : Form
     {
-        public MainForm()
-        {
-            InitializeComponent();
-            InitializeBrowser();
-            CustomizeDesign();
-        }
-
+        private string ConfigFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT Hub");
         private ChromiumWebBrowser Browser;
         private Form ActiveForm = null;
         [DllImport("user32.dll")]
@@ -24,6 +19,54 @@ namespace D3FAU4TBOT_Hub
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         public bool LoggedIn = false;
+        private long DiscordID;
+
+        public MainForm()
+        {
+            InitializeComponent();
+            SetupOrFetchConfig();
+            InitializeBrowser();
+            CustomizeDesign();
+            if (LoggedIn)
+            {
+                LoginStatusText.Text = $"Login status: Logged in as\n{DiscordID}";
+            }
+        }
+
+        private void SetupOrFetchConfig()
+        {            
+            if (!Directory.Exists(ConfigFolderPath))
+            {
+                Directory.CreateDirectory(ConfigFolderPath);
+            }
+
+            string ConfigFilePath = Path.Combine(ConfigFolderPath, "Config.json");
+
+            if (File.Exists(ConfigFilePath))
+            {
+                string SerializedJson = File.ReadAllText(ConfigFilePath);
+                Config ConfigData = JsonConvert.DeserializeObject<Config>(SerializedJson);
+                if (ConfigData.StayLoggedIn)
+                {
+                    if (long.TryParse(ConfigData.DiscordID, out long discordId))
+                    {
+                        DiscordID = discordId;
+                    }
+                    LoggedIn = true;
+                }
+            }
+
+            else
+            {
+                Config ConfigData = new Config
+                {
+                    DiscordID = "",
+                    StayLoggedIn = false
+                };
+                string ConfigJson = JsonConvert.SerializeObject(ConfigData);
+                File.WriteAllText(ConfigFilePath, ConfigJson);
+            }
+        }
 
         private void InitializeBrowser()
         {
@@ -91,6 +134,8 @@ namespace D3FAU4TBOT_Hub
                 LoggedIn = true;
                 OpenChildForm(new IdleForm());
                 LoginStatusText.Text = $"Login status: Logged in as\n{LoginForm.DiscordID}";
+                DiscordID = LoginForm.DiscordID;
+
             };
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace D3FAU4TBOT_Hub
@@ -7,6 +9,7 @@ namespace D3FAU4TBOT_Hub
     {
         public long DiscordID { get; private set; }
         public event EventHandler LoggedIn;
+        public bool StayLoggedIn = false;
 
         public LoginForm()
         {
@@ -17,6 +20,15 @@ namespace D3FAU4TBOT_Hub
         {
             if (DiscordID != 0)
             {
+                Config ConfigData = new Config
+                {
+                    DiscordID = this.DiscordID.ToString(),
+                    StayLoggedIn = this.StayLoggedIn
+                };
+
+                string ConfigJson = JsonConvert.SerializeObject(ConfigData);
+                File.WriteAllText(Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT Hub"), "Config.json"), ConfigJson);
+
                 MessageBox.Show("Login Successful");                
                 this.LoggedIn?.Invoke(this, EventArgs.Empty);
                 LoginTextBox.TextChanged -= LoginTextBox_TextChanged;
@@ -24,7 +36,7 @@ namespace D3FAU4TBOT_Hub
 
             else
             {
-                MessageBox.Show("Invalid User ID");
+                MessageBox.Show("Invalid User ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -34,6 +46,12 @@ namespace D3FAU4TBOT_Hub
             {
                 DiscordID = discordId;
             }
+        }
+
+        private void StayLoggedInCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (StayLoggedInCheckBox.Checked) { StayLoggedIn = true; }
+            else { StayLoggedIn = false; }
         }
     }
 }
