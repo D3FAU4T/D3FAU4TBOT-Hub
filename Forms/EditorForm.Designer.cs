@@ -95,6 +95,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditorForm";
             this.Text = "Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.IconBoxEditor)).EndInit();
             this.EditorPanel.ResumeLayout(false);
             this.EditorPanel.PerformLayout();

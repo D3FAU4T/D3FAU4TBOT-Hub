@@ -1,4 +1,6 @@
-﻿using D3FAU4TBOT_Hub.Forms;
+﻿using CefSharp;
+using CefSharp.WinForms;
+using D3FAU4TBOT_Hub.Forms;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -11,15 +13,28 @@ namespace D3FAU4TBOT_Hub
         public MainForm()
         {
             InitializeComponent();
+            InitializeBrowser();
             CustomizeDesign();
         }
 
+        private ChromiumWebBrowser Browser;
         private Form ActiveForm = null;
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         public bool LoggedIn = false;
+
+        private void InitializeBrowser()
+        {
+            CefSettings settings = new CefSettings();
+            settings.CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CefSharpCache");
+            settings.UserAgent = "Custom User Agent";
+
+            Cef.Initialize(settings);
+
+            Browser = new ChromiumWebBrowser();
+        }
 
         private void CustomizeDesign()
         {
@@ -81,6 +96,8 @@ namespace D3FAU4TBOT_Hub
 
         private void ExitButton_Click(Object sender, EventArgs e)
         {
+            Browser.Dispose();
+            Cef.Shutdown();
             this.Close();
         }
 
@@ -100,7 +117,7 @@ namespace D3FAU4TBOT_Hub
 
         private void EditorButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EditorForm(LoggedIn));
+            OpenChildForm(new EditorForm(LoggedIn, Browser));
         }
     }
 }
