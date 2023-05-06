@@ -30,7 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.SettingButton = new System.Windows.Forms.Button();
+            this.DiscordButton = new System.Windows.Forms.Button();
+            this.TwitchButton = new System.Windows.Forms.Button();
             this.WordsOnStreamSubMenu = new System.Windows.Forms.Panel();
+            this.PlayButton = new System.Windows.Forms.Button();
             this.MyLevelsButton = new System.Windows.Forms.Button();
             this.EditorButton = new System.Windows.Forms.Button();
             this.WordsOnStreamButton = new System.Windows.Forms.Button();
@@ -38,31 +42,27 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
+            this.AppIcon = new System.Windows.Forms.PictureBox();
+            this.AppName = new System.Windows.Forms.Label();
+            this.VersionNumber = new System.Windows.Forms.Label();
             this.LoginStatusText = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.MinimizeButton = new System.Windows.Forms.Button();
+            this.MaximizeButton = new System.Windows.Forms.Button();
+            this.CurrentMenuText = new System.Windows.Forms.Label();
+            this.CrossButton = new System.Windows.Forms.Button();
             this.IconBox = new System.Windows.Forms.PictureBox();
             this.BrandLabel = new System.Windows.Forms.Label();
             this.GreetLine = new System.Windows.Forms.Label();
-            this.PlayButton = new System.Windows.Forms.Button();
-            this.VersionNumber = new System.Windows.Forms.Label();
-            this.TwitchButton = new System.Windows.Forms.Button();
-            this.DiscordButton = new System.Windows.Forms.Button();
-            this.SettingButton = new System.Windows.Forms.Button();
-            this.AppName = new System.Windows.Forms.Label();
-            this.AppIcon = new System.Windows.Forms.PictureBox();
-            this.MinimizeButton = new System.Windows.Forms.Button();
-            this.MaximizeButton = new System.Windows.Forms.Button();
-            this.CrossButton = new System.Windows.Forms.Button();
-            this.CurrentMenuText = new System.Windows.Forms.Label();
             this.SideMenuPanel.SuspendLayout();
             this.WordsOnStreamSubMenu.SuspendLayout();
             this.HomeSubMenu.SuspendLayout();
             this.LogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // SideMenuPanel
@@ -83,6 +83,52 @@
             this.SideMenuPanel.Size = new System.Drawing.Size(220, 530);
             this.SideMenuPanel.TabIndex = 0;
             // 
+            // SettingButton
+            // 
+            this.SettingButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingButton.FlatAppearance.BorderSize = 0;
+            this.SettingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.SettingButton.Location = new System.Drawing.Point(0, 461);
+            this.SettingButton.Name = "SettingButton";
+            this.SettingButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.SettingButton.Size = new System.Drawing.Size(220, 45);
+            this.SettingButton.TabIndex = 8;
+            this.SettingButton.Text = "Setting";
+            this.SettingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SettingButton.UseVisualStyleBackColor = true;
+            this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
+            // 
+            // DiscordButton
+            // 
+            this.DiscordButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DiscordButton.FlatAppearance.BorderSize = 0;
+            this.DiscordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DiscordButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.DiscordButton.Location = new System.Drawing.Point(0, 416);
+            this.DiscordButton.Name = "DiscordButton";
+            this.DiscordButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.DiscordButton.Size = new System.Drawing.Size(220, 45);
+            this.DiscordButton.TabIndex = 7;
+            this.DiscordButton.Text = "Discord";
+            this.DiscordButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DiscordButton.UseVisualStyleBackColor = true;
+            // 
+            // TwitchButton
+            // 
+            this.TwitchButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TwitchButton.FlatAppearance.BorderSize = 0;
+            this.TwitchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TwitchButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.TwitchButton.Location = new System.Drawing.Point(0, 371);
+            this.TwitchButton.Name = "TwitchButton";
+            this.TwitchButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.TwitchButton.Size = new System.Drawing.Size(220, 45);
+            this.TwitchButton.TabIndex = 6;
+            this.TwitchButton.Text = "Twitch";
+            this.TwitchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TwitchButton.UseVisualStyleBackColor = true;
+            // 
             // WordsOnStreamSubMenu
             // 
             this.WordsOnStreamSubMenu.Controls.Add(this.PlayButton);
@@ -93,6 +139,22 @@
             this.WordsOnStreamSubMenu.Name = "WordsOnStreamSubMenu";
             this.WordsOnStreamSubMenu.Size = new System.Drawing.Size(220, 132);
             this.WordsOnStreamSubMenu.TabIndex = 5;
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PlayButton.FlatAppearance.BorderSize = 0;
+            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.PlayButton.Location = new System.Drawing.Point(0, 80);
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.PlayButton.Size = new System.Drawing.Size(220, 40);
+            this.PlayButton.TabIndex = 2;
+            this.PlayButton.Text = "Play";
+            this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PlayButton.UseVisualStyleBackColor = false;
             // 
             // MyLevelsButton
             // 
@@ -197,6 +259,40 @@
             this.LogoPanel.Size = new System.Drawing.Size(220, 100);
             this.LogoPanel.TabIndex = 0;
             // 
+            // AppIcon
+            // 
+            this.AppIcon.Image = ((System.Drawing.Image)(resources.GetObject("AppIcon.Image")));
+            this.AppIcon.Location = new System.Drawing.Point(9, 9);
+            this.AppIcon.Name = "AppIcon";
+            this.AppIcon.Size = new System.Drawing.Size(16, 16);
+            this.AppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.AppIcon.TabIndex = 3;
+            this.AppIcon.TabStop = false;
+            // 
+            // AppName
+            // 
+            this.AppName.AutoSize = true;
+            this.AppName.Font = new System.Drawing.Font("Play", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AppName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.AppName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AppName.Location = new System.Drawing.Point(31, 8);
+            this.AppName.Name = "AppName";
+            this.AppName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AppName.Size = new System.Drawing.Size(121, 17);
+            this.AppName.TabIndex = 2;
+            this.AppName.Text = "D3FAU4TBOT HUB";
+            // 
+            // VersionNumber
+            // 
+            this.VersionNumber.AutoSize = true;
+            this.VersionNumber.ForeColor = System.Drawing.Color.Gainsboro;
+            this.VersionNumber.Location = new System.Drawing.Point(3, 31);
+            this.VersionNumber.Name = "VersionNumber";
+            this.VersionNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.VersionNumber.Size = new System.Drawing.Size(82, 13);
+            this.VersionNumber.TabIndex = 1;
+            this.VersionNumber.Text = "Version: 0.1.0";
+            // 
             // LoginStatusText
             // 
             this.LoginStatusText.AutoSize = true;
@@ -224,16 +320,67 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.TopPanel.Controls.Add(this.MinimizeButton);
+            this.TopPanel.Controls.Add(this.MaximizeButton);
             this.TopPanel.Controls.Add(this.CurrentMenuText);
             this.TopPanel.Controls.Add(this.CrossButton);
-            this.TopPanel.Controls.Add(this.MaximizeButton);
-            this.TopPanel.Controls.Add(this.MinimizeButton);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(730, 32);
             this.TopPanel.TabIndex = 3;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeButton.ForeColor = System.Drawing.Color.Lime;
+            this.MinimizeButton.Location = new System.Drawing.Point(634, 0);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(32, 32);
+            this.MinimizeButton.TabIndex = 5;
+            this.MinimizeButton.Text = "➖";
+            this.MinimizeButton.UseVisualStyleBackColor = true;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            // 
+            // MaximizeButton
+            // 
+            this.MaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeButton.ForeColor = System.Drawing.Color.Yellow;
+            this.MaximizeButton.Location = new System.Drawing.Point(666, 0);
+            this.MaximizeButton.Name = "MaximizeButton";
+            this.MaximizeButton.Size = new System.Drawing.Size(32, 32);
+            this.MaximizeButton.TabIndex = 4;
+            this.MaximizeButton.Text = "🟨";
+            this.MaximizeButton.UseVisualStyleBackColor = true;
+            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
+            // 
+            // CurrentMenuText
+            // 
+            this.CurrentMenuText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CurrentMenuText.AutoSize = true;
+            this.CurrentMenuText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentMenuText.ForeColor = System.Drawing.Color.Gainsboro;
+            this.CurrentMenuText.Location = new System.Drawing.Point(298, 8);
+            this.CurrentMenuText.Name = "CurrentMenuText";
+            this.CurrentMenuText.Size = new System.Drawing.Size(36, 16);
+            this.CurrentMenuText.TabIndex = 3;
+            this.CurrentMenuText.Text = "Yarr";
+            // 
+            // CrossButton
+            // 
+            this.CrossButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CrossButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CrossButton.ForeColor = System.Drawing.Color.Red;
+            this.CrossButton.Location = new System.Drawing.Point(698, 0);
+            this.CrossButton.Name = "CrossButton";
+            this.CrossButton.Size = new System.Drawing.Size(32, 32);
+            this.CrossButton.TabIndex = 2;
+            this.CrossButton.Text = "❌";
+            this.CrossButton.UseVisualStyleBackColor = true;
+            this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
             // 
             // IconBox
             // 
@@ -270,148 +417,6 @@
             this.GreetLine.TabIndex = 2;
             this.GreetLine.Text = "AHOY, Matey!";
             // 
-            // PlayButton
-            // 
-            this.PlayButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PlayButton.FlatAppearance.BorderSize = 0;
-            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PlayButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.PlayButton.Location = new System.Drawing.Point(0, 80);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.PlayButton.Size = new System.Drawing.Size(220, 40);
-            this.PlayButton.TabIndex = 2;
-            this.PlayButton.Text = "Play";
-            this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PlayButton.UseVisualStyleBackColor = false;
-            // 
-            // VersionNumber
-            // 
-            this.VersionNumber.AutoSize = true;
-            this.VersionNumber.ForeColor = System.Drawing.Color.Gainsboro;
-            this.VersionNumber.Location = new System.Drawing.Point(3, 31);
-            this.VersionNumber.Name = "VersionNumber";
-            this.VersionNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.VersionNumber.Size = new System.Drawing.Size(82, 13);
-            this.VersionNumber.TabIndex = 1;
-            this.VersionNumber.Text = "Version: 0.1.0";
-            // 
-            // TwitchButton
-            // 
-            this.TwitchButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TwitchButton.FlatAppearance.BorderSize = 0;
-            this.TwitchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TwitchButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TwitchButton.Location = new System.Drawing.Point(0, 371);
-            this.TwitchButton.Name = "TwitchButton";
-            this.TwitchButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.TwitchButton.Size = new System.Drawing.Size(220, 45);
-            this.TwitchButton.TabIndex = 6;
-            this.TwitchButton.Text = "Twitch";
-            this.TwitchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TwitchButton.UseVisualStyleBackColor = true;
-            // 
-            // DiscordButton
-            // 
-            this.DiscordButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DiscordButton.FlatAppearance.BorderSize = 0;
-            this.DiscordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DiscordButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DiscordButton.Location = new System.Drawing.Point(0, 416);
-            this.DiscordButton.Name = "DiscordButton";
-            this.DiscordButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.DiscordButton.Size = new System.Drawing.Size(220, 45);
-            this.DiscordButton.TabIndex = 7;
-            this.DiscordButton.Text = "Discord";
-            this.DiscordButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DiscordButton.UseVisualStyleBackColor = true;
-            // 
-            // SettingButton
-            // 
-            this.SettingButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingButton.FlatAppearance.BorderSize = 0;
-            this.SettingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.SettingButton.Location = new System.Drawing.Point(0, 461);
-            this.SettingButton.Name = "SettingButton";
-            this.SettingButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingButton.Size = new System.Drawing.Size(220, 45);
-            this.SettingButton.TabIndex = 8;
-            this.SettingButton.Text = "Setting";
-            this.SettingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingButton.UseVisualStyleBackColor = true;
-            this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
-            // 
-            // AppName
-            // 
-            this.AppName.AutoSize = true;
-            this.AppName.Font = new System.Drawing.Font("Play", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.AppName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AppName.Location = new System.Drawing.Point(31, 8);
-            this.AppName.Name = "AppName";
-            this.AppName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AppName.Size = new System.Drawing.Size(121, 17);
-            this.AppName.TabIndex = 2;
-            this.AppName.Text = "D3FAU4TBOT HUB";
-            // 
-            // AppIcon
-            // 
-            this.AppIcon.Image = ((System.Drawing.Image)(resources.GetObject("AppIcon.Image")));
-            this.AppIcon.Location = new System.Drawing.Point(9, 9);
-            this.AppIcon.Name = "AppIcon";
-            this.AppIcon.Size = new System.Drawing.Size(16, 16);
-            this.AppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.AppIcon.TabIndex = 3;
-            this.AppIcon.TabStop = false;
-            // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeButton.ForeColor = System.Drawing.Color.Lime;
-            this.MinimizeButton.Location = new System.Drawing.Point(631, 0);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.MinimizeButton.TabIndex = 0;
-            this.MinimizeButton.Text = "➖";
-            this.MinimizeButton.UseVisualStyleBackColor = true;
-            // 
-            // MaximizeButton
-            // 
-            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeButton.ForeColor = System.Drawing.Color.Yellow;
-            this.MaximizeButton.Location = new System.Drawing.Point(664, 0);
-            this.MaximizeButton.Name = "MaximizeButton";
-            this.MaximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.MaximizeButton.TabIndex = 1;
-            this.MaximizeButton.Text = "🟨";
-            this.MaximizeButton.UseVisualStyleBackColor = true;
-            // 
-            // CrossButton
-            // 
-            this.CrossButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CrossButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrossButton.ForeColor = System.Drawing.Color.Red;
-            this.CrossButton.Location = new System.Drawing.Point(698, 0);
-            this.CrossButton.Name = "CrossButton";
-            this.CrossButton.Size = new System.Drawing.Size(32, 32);
-            this.CrossButton.TabIndex = 2;
-            this.CrossButton.Text = "❌";
-            this.CrossButton.UseVisualStyleBackColor = true;
-            this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
-            // 
-            // CurrentMenuText
-            // 
-            this.CurrentMenuText.AutoSize = true;
-            this.CurrentMenuText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentMenuText.ForeColor = System.Drawing.Color.Gainsboro;
-            this.CurrentMenuText.Location = new System.Drawing.Point(279, 7);
-            this.CurrentMenuText.Name = "CurrentMenuText";
-            this.CurrentMenuText.Size = new System.Drawing.Size(48, 16);
-            this.CurrentMenuText.TabIndex = 3;
-            this.CurrentMenuText.Text = "Editor";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,12 +438,12 @@
             this.HomeSubMenu.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,9 +473,9 @@
         private System.Windows.Forms.PictureBox AppIcon;
         private System.Windows.Forms.Label AppName;
         private System.Windows.Forms.Button CrossButton;
-        private System.Windows.Forms.Button MaximizeButton;
-        private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Label CurrentMenuText;
+        private System.Windows.Forms.Button MinimizeButton;
+        private System.Windows.Forms.Button MaximizeButton;
     }
 }
 
