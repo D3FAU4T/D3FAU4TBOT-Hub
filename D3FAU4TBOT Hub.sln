@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3FAU4TBOT Hub", "D3FAU4TBOT Hub.csproj", "{60D3C473-5FD9-46F1-987F-1886C6BFEBF9}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "D3FAU4TBOT Hub Setup", "..\D3FAU4TBOT Hub Setup\D3FAU4TBOT Hub Setup.vdproj", "{5D72C50F-4F79-4563-B37B-54951F5B6F25}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "D3FAU4TBOT Hub", "..\Setup\D3FAU4TBOT Hub\D3FAU4TBOT Hub.vdproj", "{6539493E-1CA0-4315-AA00-BAE47FA17A91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{60D3C473-5FD9-46F1-987F-1886C6BFEBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60D3C473-5FD9-46F1-987F-1886C6BFEBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60D3C473-5FD9-46F1-987F-1886C6BFEBF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D72C50F-4F79-4563-B37B-54951F5B6F25}.Debug|Any CPU.ActiveCfg = Debug
-		{5D72C50F-4F79-4563-B37B-54951F5B6F25}.Release|Any CPU.ActiveCfg = Release
+		{6539493E-1CA0-4315-AA00-BAE47FA17A91}.Debug|Any CPU.ActiveCfg = Debug
+		{6539493E-1CA0-4315-AA00-BAE47FA17A91}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -53,6 +53,12 @@ namespace D3FAU4TBOT_Hub
             }
 
             string ConfigFilePath = Path.Combine(ConfigFolderPath, "Config.json");
+            string ChangeLogPath = Path.Combine(ConfigFolderPath, "Changelog.md");
+
+            if (!File.Exists(ChangeLogPath))
+            {
+                File.WriteAllText(ChangeLogPath, "");
+            }
 
             if (File.Exists(ConfigFilePath))
             {

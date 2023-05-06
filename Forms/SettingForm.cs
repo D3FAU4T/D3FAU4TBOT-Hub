@@ -1,4 +1,5 @@
 ﻿using Octokit;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -11,6 +12,7 @@ namespace D3FAU4TBOT_Hub.Forms
     {        
         private bool UpdateAvailableBool = false;
         private Release GlobalRelease;
+        private string ConfigPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT Hub");
 
         public SettingForm(bool IsUpdateAvailable, Release LatestRelease)
         {
@@ -23,7 +25,7 @@ namespace D3FAU4TBOT_Hub.Forms
 
         private void SetRichText()
         {
-            string Changelog = File.ReadAllText(Path.Combine(System.Windows.Forms.Application.StartupPath, "Assets\\Changelog.md"));
+            string Changelog = File.ReadAllText(Path.Combine(ConfigPath, "Changelog.md"));
             ChangelogTextBox.Text = Changelog;
 
             foreach (Match match in Regex.Matches(Changelog, @"^\s*#(.+)$", RegexOptions.Multiline))
@@ -51,7 +53,7 @@ namespace D3FAU4TBOT_Hub.Forms
             {
                 CheckForUpdatesButton.Text = "Download";
                 UpdateText.Text = "Update available. Please download latest version from https://github.com/D3FAU4T/D3FAU4TBOT-Hub/releases";
-                File.WriteAllText(Path.Combine(System.Windows.Forms.Application.StartupPath, "Assets\\Changelog.md"), LatestRelease.Body);
+                File.WriteAllText(Path.Combine(ConfigPath, "Changelog.md"), LatestRelease.Body);
                 SetRichText();
             }
 
