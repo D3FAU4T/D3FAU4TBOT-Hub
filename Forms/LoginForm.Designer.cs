@@ -38,6 +38,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Play", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
@@ -49,6 +50,7 @@
             // 
             // LoginButton
             // 
+            this.LoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.LoginButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LoginButton.BackgroundImage")));
             this.LoginButton.FlatAppearance.BorderSize = 0;
@@ -64,6 +66,7 @@
             // 
             // LoginTextBox
             // 
+            this.LoginTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoginTextBox.Font = new System.Drawing.Font("Play", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginTextBox.Location = new System.Drawing.Point(328, 201);
             this.LoginTextBox.Name = "LoginTextBox";
@@ -73,10 +76,11 @@
             // 
             // DiscordIDLabel
             // 
+            this.DiscordIDLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DiscordIDLabel.AutoSize = true;
             this.DiscordIDLabel.Font = new System.Drawing.Font("Play", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiscordIDLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DiscordIDLabel.Location = new System.Drawing.Point(217, 202);
+            this.DiscordIDLabel.Location = new System.Drawing.Point(217, 200);
             this.DiscordIDLabel.Name = "DiscordIDLabel";
             this.DiscordIDLabel.Size = new System.Drawing.Size(105, 17);
             this.DiscordIDLabel.TabIndex = 3;
@@ -84,6 +88,7 @@
             // 
             // StayLoggedInCheckBox
             // 
+            this.StayLoggedInCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StayLoggedInCheckBox.AutoSize = true;
             this.StayLoggedInCheckBox.Font = new System.Drawing.Font("Play", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StayLoggedInCheckBox.ForeColor = System.Drawing.Color.Gainsboro;
