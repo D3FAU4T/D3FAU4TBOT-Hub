@@ -10,18 +10,21 @@ namespace D3FAU4TBOT_Hub.Forms
     {
         private ChromiumWebBrowser ChromiumBrowser;
         public Uri EditorHTMLUri = new Uri(Path.Combine(Application.StartupPath, "Assets\\Editor.html"), UriKind.RelativeOrAbsolute);
+        private long DiscordId;
 
-        public EditorForm(bool IsLoggedIn, ChromiumWebBrowser Browser)
+        public EditorForm(bool IsLoggedIn, ChromiumWebBrowser Browser, long DiscordID)
         {
             InitializeComponent();
+            this.DiscordId = DiscordID;
             ChromiumBrowser = Browser;
             PirateLoginCheck(IsLoggedIn);
         }
 
         private void PirateLoginCheck(bool IsLoggedIn)
         {
-            if (IsLoggedIn)
+            if (IsLoggedIn && DiscordId != 0)
             {
+                ModifyScript(this.DiscordId);
                 IconBoxEditor.Visible = false;
                 GreetLineEditor.Visible = false;
                 BrandLabelEditor.Visible = false;
@@ -36,6 +39,12 @@ namespace D3FAU4TBOT_Hub.Forms
                     MessageBox.Show("Error: File path must not contain any symbol");
                 }
             }
+        }
+
+        private void ModifyScript(long DiscordId)
+        {
+            string Script = File.ReadAllText(Path.Combine(Application.StartupPath, "Assets\\script.js"));
+            File.WriteAllText(Path.Combine(Application.StartupPath, "Assets\\scriptModified.js"), Script.Replace("System", DiscordId.ToString()));            
         }
 
         private void DisplayHTMLInPanel(string HTMLPath, Panel Panel)

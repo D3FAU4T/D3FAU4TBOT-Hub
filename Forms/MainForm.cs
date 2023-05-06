@@ -176,7 +176,7 @@ namespace D3FAU4TBOT_Hub
 
         private void EditorButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EditorForm(LoggedIn, Browser));
+            OpenChildForm(new EditorForm(LoggedIn, Browser, DiscordID));
         }
 
         private void SettingButton_Click(object sender, EventArgs e)

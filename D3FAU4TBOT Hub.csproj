@@ -236,6 +236,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\scriptModified.js" />
     <Content Include="favicon.ico" />
     <EmbeddedResource Include="Assets\Editor.html" />
     <Content Include="Assets\favicon.ico" />
