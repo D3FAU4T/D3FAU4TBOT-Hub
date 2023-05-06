@@ -47,11 +47,6 @@
             this.VersionNumber = new System.Windows.Forms.Label();
             this.LoginStatusText = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.TopPanel = new System.Windows.Forms.Panel();
-            this.MinimizeButton = new System.Windows.Forms.Button();
-            this.MaximizeButton = new System.Windows.Forms.Button();
-            this.CurrentMenuText = new System.Windows.Forms.Label();
-            this.CrossButton = new System.Windows.Forms.Button();
             this.IconBox = new System.Windows.Forms.PictureBox();
             this.BrandLabel = new System.Windows.Forms.Label();
             this.GreetLine = new System.Windows.Forms.Label();
@@ -61,7 +56,6 @@
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).BeginInit();
             this.MainPanel.SuspendLayout();
-            this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -307,7 +301,6 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.MainPanel.Controls.Add(this.TopPanel);
             this.MainPanel.Controls.Add(this.IconBox);
             this.MainPanel.Controls.Add(this.BrandLabel);
             this.MainPanel.Controls.Add(this.GreetLine);
@@ -316,71 +309,6 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(730, 530);
             this.MainPanel.TabIndex = 1;
-            // 
-            // TopPanel
-            // 
-            this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.TopPanel.Controls.Add(this.MinimizeButton);
-            this.TopPanel.Controls.Add(this.MaximizeButton);
-            this.TopPanel.Controls.Add(this.CurrentMenuText);
-            this.TopPanel.Controls.Add(this.CrossButton);
-            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(730, 32);
-            this.TopPanel.TabIndex = 3;
-            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
-            // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeButton.ForeColor = System.Drawing.Color.Lime;
-            this.MinimizeButton.Location = new System.Drawing.Point(634, 0);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(32, 32);
-            this.MinimizeButton.TabIndex = 5;
-            this.MinimizeButton.Text = "➖";
-            this.MinimizeButton.UseVisualStyleBackColor = true;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            // 
-            // MaximizeButton
-            // 
-            this.MaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeButton.ForeColor = System.Drawing.Color.Yellow;
-            this.MaximizeButton.Location = new System.Drawing.Point(666, 0);
-            this.MaximizeButton.Name = "MaximizeButton";
-            this.MaximizeButton.Size = new System.Drawing.Size(32, 32);
-            this.MaximizeButton.TabIndex = 4;
-            this.MaximizeButton.Text = "🟨";
-            this.MaximizeButton.UseVisualStyleBackColor = true;
-            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
-            // 
-            // CurrentMenuText
-            // 
-            this.CurrentMenuText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CurrentMenuText.AutoSize = true;
-            this.CurrentMenuText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentMenuText.ForeColor = System.Drawing.Color.Gainsboro;
-            this.CurrentMenuText.Location = new System.Drawing.Point(298, 8);
-            this.CurrentMenuText.Name = "CurrentMenuText";
-            this.CurrentMenuText.Size = new System.Drawing.Size(36, 16);
-            this.CurrentMenuText.TabIndex = 3;
-            this.CurrentMenuText.Text = "Yarr";
-            // 
-            // CrossButton
-            // 
-            this.CrossButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CrossButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrossButton.ForeColor = System.Drawing.Color.Red;
-            this.CrossButton.Location = new System.Drawing.Point(698, 0);
-            this.CrossButton.Name = "CrossButton";
-            this.CrossButton.Size = new System.Drawing.Size(32, 32);
-            this.CrossButton.TabIndex = 2;
-            this.CrossButton.Text = "❌";
-            this.CrossButton.UseVisualStyleBackColor = true;
-            this.CrossButton.Click += new System.EventHandler(this.CrossButton_Click);
             // 
             // IconBox
             // 
@@ -426,7 +354,6 @@
             this.ClientSize = new System.Drawing.Size(950, 530);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SideMenuPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 530);
             this.Name = "MainForm";
@@ -441,8 +368,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            this.TopPanel.ResumeLayout(false);
-            this.TopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -459,7 +384,6 @@
         private System.Windows.Forms.PictureBox IconBox;
         private System.Windows.Forms.Label BrandLabel;
         private System.Windows.Forms.Label GreetLine;
-        private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Label LoginStatusText;
         private System.Windows.Forms.Panel WordsOnStreamSubMenu;
         private System.Windows.Forms.Button MyLevelsButton;
@@ -472,10 +396,6 @@
         private System.Windows.Forms.Button TwitchButton;
         private System.Windows.Forms.PictureBox AppIcon;
         private System.Windows.Forms.Label AppName;
-        private System.Windows.Forms.Button CrossButton;
-        private System.Windows.Forms.Label CurrentMenuText;
-        private System.Windows.Forms.Button MinimizeButton;
-        private System.Windows.Forms.Button MaximizeButton;
     }
 }
 

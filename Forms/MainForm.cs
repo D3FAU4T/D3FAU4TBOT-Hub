@@ -14,10 +14,7 @@ namespace D3FAU4TBOT_Hub
     {
         private GitHubClient Client;
         private bool UpdateAvailable = false;
-        private string ChangeLog = "";
-        private string NewVersion = "";
         private Release GlobalRelease;
-        private bool IsShuttingDown = false;
         private string ConfigFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT Hub");
         private ChromiumWebBrowser Browser;
         private Form ActiveForm = null;
@@ -134,7 +131,6 @@ namespace D3FAU4TBOT_Hub
                 if (ChildForm.Name == ActiveForm.Name) return;
                 ActiveForm.Close();
             };
-            CurrentMenuText.Text = ChildForm.Name.Replace("Form", "");
             ActiveForm = ChildForm;
             ChildForm.TopLevel = false;
             ChildForm.FormBorderStyle = FormBorderStyle.None;
@@ -164,14 +160,6 @@ namespace D3FAU4TBOT_Hub
             };
         }
 
-        private void ExitApp()
-        {
-            IsShuttingDown = true;
-            Browser.Dispose();
-            Cef.Shutdown();
-            this.Close();
-        }
-
         private void TopPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -197,34 +185,10 @@ namespace D3FAU4TBOT_Hub
             OpenChildForm(new SettingForm(UpdateAvailable, GlobalRelease));
         }
 
-        private void CrossButton_Click(object sender, EventArgs e)
-        {
-            ExitApp();
-        }
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!IsShuttingDown)
-            {
-                Browser.Dispose();
-                Cef.Shutdown();
-                this.Close();
-            }
-
-            IsShuttingDown = false;
-        }
-
-        private void MaximizeButton_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-                this.WindowState = FormWindowState.Normal;
-            else
-                this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void MinimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+            Browser.Dispose();
+            Cef.Shutdown();
         }
 
         private async void CheckForUpdates()
@@ -234,8 +198,6 @@ namespace D3FAU4TBOT_Hub
             if (GlobalRelease.TagName.Replace("v", "") != ConfigData.Version)
             {
                 UpdateAvailable = true;
-                NewVersion = GlobalRelease.TagName;
-                ChangeLog = GlobalRelease.Body;
             };            
         }
     }
