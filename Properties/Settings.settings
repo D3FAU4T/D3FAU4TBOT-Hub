@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="D3FAU4TBOT_Hub.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="GithubToken" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">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</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>
