@@ -5,7 +5,9 @@ using Newtonsoft.Json;
 using Octokit;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace D3FAU4TBOT_Hub
@@ -37,9 +39,35 @@ namespace D3FAU4TBOT_Hub
             SetupOrFetchConfig();
             InitializeBrowser();
             CustomizeDesign();
+            ChangeStatusText();
+        }
+
+        private async void ChangeStatusText()
+        {
             if (LoggedIn)
             {
-                LoginStatusText.Text = $"Login status: Logged in as\n{DiscordID}";
+                string DiscordName = await GetDiscordName(DiscordID);
+                if (DiscordName != null)
+                {
+                    LoginStatusText.Text = $"Login status: Logged in as\n{DiscordName}";
+                }
+                else
+                {
+                    LoginStatusText.Text = $"Login status: Logged in as\n{DiscordID}";
+                }
+            }
+        }
+
+        private async Task<string> GetDiscordName(long OurDiscordId)
+        {
+            using (HttpClient HttpClient = new HttpClient())
+            {
+                var Response = await HttpClient.GetAsync($"https://discord.d3fau4tbot.repl.co/getusername/{OurDiscordId}");
+                if (Response.IsSuccessStatusCode)
+                {
+                    return await Response.Content.ReadAsStringAsync();
+                }
+                return null;
             }
         }
 
