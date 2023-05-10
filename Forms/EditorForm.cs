@@ -9,7 +9,7 @@ namespace D3FAU4TBOT_Hub.Forms
     public partial class EditorForm : Form
     {
         private ChromiumWebBrowser ChromiumBrowser;
-        public Uri EditorHTMLUri = new Uri(Path.Combine(Application.StartupPath, "Assets\\Editor.html"), UriKind.RelativeOrAbsolute);
+        public Uri EditorHTMLUri = new Uri(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT HUB\\Assets\\Editor.html"), UriKind.RelativeOrAbsolute);
         private long DiscordId;
 
         public EditorForm(bool IsLoggedIn, ChromiumWebBrowser Browser, long DiscordID)
@@ -43,8 +43,8 @@ namespace D3FAU4TBOT_Hub.Forms
 
         private void ModifyScript(long DiscordId)
         {
-            string Script = File.ReadAllText(Path.Combine(Application.StartupPath, "Assets\\script.js"));
-            File.WriteAllText(Path.Combine(Application.StartupPath, "Assets\\scriptModified.js"), Script.Replace("System", DiscordId.ToString()));            
+            string Script = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT HUB\\Assets\\script.js"));
+            File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT HUB\\Assets\\scriptModified.js"), Script.Replace("System", DiscordId.ToString()));
         }
 
         private void DisplayHTMLInPanel(string HTMLPath, Panel Panel)

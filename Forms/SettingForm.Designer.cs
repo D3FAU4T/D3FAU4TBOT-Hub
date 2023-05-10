@@ -37,6 +37,7 @@
             // 
             // CheckForUpdatesButton
             // 
+            this.CheckForUpdatesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CheckForUpdatesButton.BackColor = System.Drawing.Color.Fuchsia;
             this.CheckForUpdatesButton.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.CheckForUpdatesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -51,6 +52,7 @@
             // 
             // UpdateHeader
             // 
+            this.UpdateHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UpdateHeader.AutoSize = true;
             this.UpdateHeader.Font = new System.Drawing.Font("Play", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateHeader.ForeColor = System.Drawing.Color.Gainsboro;
@@ -62,6 +64,7 @@
             // 
             // UpdateText
             // 
+            this.UpdateText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UpdateText.AutoSize = true;
             this.UpdateText.ForeColor = System.Drawing.Color.Gainsboro;
             this.UpdateText.Location = new System.Drawing.Point(50, 95);
@@ -72,6 +75,7 @@
             // 
             // ChangelogHeader
             // 
+            this.ChangelogHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ChangelogHeader.AutoSize = true;
             this.ChangelogHeader.Font = new System.Drawing.Font("Play", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangelogHeader.ForeColor = System.Drawing.Color.Gainsboro;
@@ -83,6 +87,7 @@
             // 
             // ChangelogTextBox
             // 
+            this.ChangelogTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ChangelogTextBox.BackColor = System.Drawing.Color.Blue;
             this.ChangelogTextBox.ForeColor = System.Drawing.Color.White;
             this.ChangelogTextBox.Location = new System.Drawing.Point(53, 207);
