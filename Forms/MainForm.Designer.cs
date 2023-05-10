@@ -165,6 +165,7 @@
             this.MyLevelsButton.Text = "My Levels";
             this.MyLevelsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MyLevelsButton.UseVisualStyleBackColor = false;
+            this.MyLevelsButton.Click += new System.EventHandler(this.MyLevelsButton_Click);
             // 
             // EditorButton
             // 

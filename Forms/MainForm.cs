@@ -15,7 +15,7 @@ namespace D3FAU4TBOT_Hub
         private GitHubClient Client;
         private bool UpdateAvailable = false;
         private Release GlobalRelease;
-        private string ConfigFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT Hub");
+        private static string ConfigFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "D3FAU4TBOT Hub");
         private ChromiumWebBrowser Browser;
         private Form ActiveForm = null;
         [DllImport("user32.dll")]
@@ -29,13 +29,14 @@ namespace D3FAU4TBOT_Hub
         public MainForm()
         {
             InitializeComponent();
+            
             Client = new GitHubClient(new ProductHeaderValue("D3FAU4TBOT-Hub"));
             Client.Credentials = new Credentials(Properties.Settings.Default.GithubToken);
             CheckForUpdates();
+            VersionNumber.Text = $"Version: {Version}";
             SetupOrFetchConfig();
             InitializeBrowser();
             CustomizeDesign();
-            VersionNumber.Text = $"Version: {Version}";
             if (LoggedIn)
             {
                 LoginStatusText.Text = $"Login status: Logged in as\n{DiscordID}";
@@ -51,6 +52,12 @@ namespace D3FAU4TBOT_Hub
 
             string ConfigFilePath = Path.Combine(ConfigFolderPath, "Config.json");
             string ChangeLogPath = Path.Combine(ConfigFolderPath, "Changelog.md");
+            string MyLevels = Path.Combine(ConfigFolderPath, "My Levels");
+
+            if (!Directory.Exists(MyLevels))
+            {
+                Directory.CreateDirectory(MyLevels);
+            }
 
             if (!File.Exists(ChangeLogPath))
             {
@@ -128,7 +135,10 @@ namespace D3FAU4TBOT_Hub
         {
             if (ActiveForm != null)
             {
-                if (ChildForm.Name == ActiveForm.Name) return;
+                if (ChildForm.Name == ActiveForm.Name || Browser.IsLoading)
+                {
+                    Console.WriteLine($"Current Form: {ActiveForm.Name}, Requested Form: {ChildForm.Name}");
+                }
                 ActiveForm.Close();
             };
             ActiveForm = ChildForm;
@@ -176,6 +186,7 @@ namespace D3FAU4TBOT_Hub
 
         private void EditorButton_Click(object sender, EventArgs e)
         {
+            if (ActiveForm != null && ActiveForm.Name == "EditorForm") return;
             OpenChildForm(new EditorForm(LoggedIn, Browser, DiscordID));
         }
 
@@ -194,11 +205,19 @@ namespace D3FAU4TBOT_Hub
         private async void CheckForUpdates()
         {
             Config ConfigData = new Config();
+            Console.WriteLine(ConfigData.Version);
+            Version = ConfigData.Version;
             GlobalRelease = await Client.Repository.Release.GetLatest("D3FAU4T", "D3FAU4TBOT-Hub");
             if (GlobalRelease.TagName.Replace("v", "") != ConfigData.Version)
             {
                 UpdateAvailable = true;
             };            
+        }
+
+        private void MyLevelsButton_Click(object sender, EventArgs e)
+        {
+            HideSubMenus();
+            OpenChildForm(new MyLevelsForm());
         }
     }
 }
