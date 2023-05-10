@@ -107,7 +107,10 @@ namespace D3FAU4TBOT_Hub.Forms
 
         private void SyncWithServerButton_Click(object sender, EventArgs e)
         {
+            SyncingText.Visible = true;
+            SyncingText.Text = "Syncing...";
             SendArrayToServer();
+            SyncingText.Text = "Sync successful ✅";
         }
     }
 }
