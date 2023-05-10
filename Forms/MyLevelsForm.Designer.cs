@@ -32,6 +32,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ExplorerBrowser = new System.Windows.Forms.WebBrowser();
+            this.SyncWithServerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LevelName
@@ -48,12 +49,24 @@
             this.ExplorerBrowser.Size = new System.Drawing.Size(690, 408);
             this.ExplorerBrowser.TabIndex = 0;
             // 
+            // SyncWithServerButton
+            // 
+            this.SyncWithServerButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SyncWithServerButton.Location = new System.Drawing.Point(12, 24);
+            this.SyncWithServerButton.Name = "SyncWithServerButton";
+            this.SyncWithServerButton.Size = new System.Drawing.Size(96, 23);
+            this.SyncWithServerButton.TabIndex = 1;
+            this.SyncWithServerButton.Text = "Sync with server";
+            this.SyncWithServerButton.UseVisualStyleBackColor = true;
+            this.SyncWithServerButton.Click += new System.EventHandler(this.SyncWithServerButton_Click);
+            // 
             // MyLevelsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(714, 491);
+            this.Controls.Add(this.SyncWithServerButton);
             this.Controls.Add(this.ExplorerBrowser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MyLevelsForm";
@@ -67,5 +80,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.WebBrowser ExplorerBrowser;
+        private System.Windows.Forms.Button SyncWithServerButton;
     }
 }
